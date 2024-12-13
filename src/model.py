@@ -1,3 +1,5 @@
+from torch import nn
+from torch.functional import F
 class MNISTModel(nn.Module):
     def __init__(self):
         super(MNISTModel, self).__init__()
