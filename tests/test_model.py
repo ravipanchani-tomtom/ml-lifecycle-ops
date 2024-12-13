@@ -2,6 +2,9 @@
 
 import unittest
 import torch
+import sys
+sys.path.append(".")
+
 from src.model import MNISTModel
 
 class TestMNISTModel(unittest.TestCase):
