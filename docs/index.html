@@ -4,27 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MNIST Examples and Inferences</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <h1>MNIST Examples and Inferences</h1>
-<div id="examples"></div>
+<div id="examples" class="examples-container"></div>
 
 <script>
     const numExamples = 5;
     const examplesDiv = document.getElementById('examples');
 
     for (let i = 0; i < numExamples; i++) {
+        const exampleDiv = document.createElement('div');
+        exampleDiv.className = 'example';
+
         const img = document.createElement('img');
         img.src = `results/example_${i}.png`;
-        examplesDiv.appendChild(img);
+        img.className = 'example-image';
+        exampleDiv.appendChild(img);
 
         fetch(`results/example_${i}.txt`)
             .then(response => response.text())
             .then(data => {
                 const p = document.createElement('p');
                 p.textContent = data;
-                examplesDiv.appendChild(p);
+                p.className = 'example-text';
+                exampleDiv.appendChild(p);
             });
+
+        examplesDiv.appendChild(exampleDiv);
     }
 </script>
 </body>
