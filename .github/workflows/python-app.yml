@@ -33,7 +33,7 @@ jobs:
       run: |
         pytest tests/ --disable-warnings -q
 
-    - name: Run Random Samples
+    - name: Run Random Samples live
       run: |
         python src/random_sample_test.py
 
