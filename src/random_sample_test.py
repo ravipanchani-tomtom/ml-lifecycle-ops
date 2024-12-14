@@ -4,7 +4,7 @@ import torch
 import matplotlib.pyplot as plt
 from torchvision.utils import save_image
 
-def save_random_examples(model, data_loader, log_dir='logs', num_examples=5):
+def save_random_examples(model, data_loader, log_dir='docs/results', num_examples=5):
     os.makedirs(log_dir, exist_ok=True)
     model.eval()
     examples = []

@@ -15,7 +15,7 @@
 
     for (let i = 0; i < numExamples; i++) {
         const img = document.createElement('img');
-        img.src = `example_${i}.png`;
+        img.src = `results/example_${i}.png`;
         examplesDiv.appendChild(img);
 
         fetch(`example_${i}.txt`)
