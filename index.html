@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNIST Examples and Inferences</title>
+</head>
+<body>
+<h1>MNIST Examples and Inferences</h1>
+<div id="examples"></div>
+
+<script>
+    const numExamples = 5;
+    const examplesDiv = document.getElementById('examples');
+
+    for (let i = 0; i < numExamples; i++) {
+        const img = document.createElement('img');
+        img.src = `results/example_${i}.png`;
+        examplesDiv.appendChild(img);
+
+        fetch(`results/example_${i}.txt`)
+            .then(response => response.text())
+            .then(data => {
+                const p = document.createElement('p');
+                p.textContent = data;
+                examplesDiv.appendChild(p);
+            });
+    }
+</script>
+</body>
+</html>
