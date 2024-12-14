@@ -18,7 +18,7 @@ class TestTrainModel(unittest.TestCase):
     def setUp(self):
         self.model = MNISTNet()
         self.train_loader, self.test_loader = load_data()
-        self.model_path = './mnist_model.pth'
+        self.model_path = '~/mnist_model.pth'
 
     def test_training_accuracy(self):
         print(f'Parameters - {self.model.count_parameters()}')
@@ -28,6 +28,7 @@ class TestTrainModel(unittest.TestCase):
         self.assertGreaterEqual(accuracy, 0.75, "Model did not achieve 95% accuracy in the first epoch.")
         # Save the model
         torch.save(self.model.state_dict(), self.model_path)
+        print(f'Model saved to {self.model_path}')
 
     def test_test_accuracy(self):
         # Load the saved model
