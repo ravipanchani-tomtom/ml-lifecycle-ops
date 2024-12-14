@@ -1,13 +1,13 @@
-def load_data(batch_size=32):
+def load_data(batch_size=64):
     import torchvision.transforms as transforms
     from torchvision import datasets
     from torch.utils.data import DataLoader
 
     transform = transforms.Compose([
-        transforms.RandomRotation(10),  # Rotate by up to 10 degrees
+        transforms.RandomRotation(7),  # Rotate by up to 10 degrees
         transforms.RandomPerspective(distortion_scale=0.2, p=0.5),
         transforms.ToTensor(),
-        transforms.Normalize((0.5,), (0.5,))
+        transforms.Normalize((0.1307,), (0.3081,))
     ])
 
     train_dataset = datasets.MNIST(root='./data', train=True, download=True, transform=transform)
