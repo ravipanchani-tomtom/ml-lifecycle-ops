@@ -1,3 +1,5 @@
+[![Model Tracking](https://github.com/ravipanchani-tomtom/ml-lifecycle-ops/actions/workflows/python-app.yml/badge.svg)](https://github.com/ravipanchani-tomtom/ml-lifecycle-ops/actions/workflows/python-app.yml)
+
 # MNIST PyTorch Project
 
 This project implements a PyTorch-based deep learning model for training on the MNIST dataset. The model is designed to have a maximum of 25,000 parameters and aims to achieve at least 95% training accuracy in the first epoch.
