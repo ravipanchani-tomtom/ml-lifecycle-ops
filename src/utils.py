@@ -1,9 +1,11 @@
-def load_data(batch_size=64):
+def load_data(batch_size=32):
     import torchvision.transforms as transforms
     from torchvision import datasets
     from torch.utils.data import DataLoader
 
     transform = transforms.Compose([
+        transforms.RandomRotation(10),  # Rotate by up to 10 degrees
+        transforms.RandomPerspective(distortion_scale=0.2, p=0.5),
         transforms.ToTensor(),
         transforms.Normalize((0.5,), (0.5,))
     ])

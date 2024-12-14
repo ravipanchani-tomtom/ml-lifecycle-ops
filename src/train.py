@@ -1,17 +1,20 @@
+from tqdm import tqdm
+
 def train_model(model, train_loader, criterion, optimizer, num_epochs=1):
     model.train()
     for epoch in range(num_epochs):
         running_loss = 0.0
         correct = 0
         total = 0
-        
-        for images, labels in train_loader:
+
+        # Use tqdm to create a progress bar
+        for images, labels in tqdm(train_loader, desc=f'Epoch {epoch+1}/{num_epochs}', unit='batch'):
             optimizer.zero_grad()
             outputs = model(images)
             loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()
-            
+
             running_loss += loss.item()
             _, predicted = outputs.max(1)
             total += labels.size(0)
