@@ -18,7 +18,7 @@ class TestTrainModel(unittest.TestCase):
     def setUp(self):
         self.model = MNISTNet()
         self.train_loader, self.test_loader = load_data()
-        self.model_path = '/tmp/mnist_model.pth'
+        self.model_path = './mnist_model.pth'
 
     def test_training_accuracy(self):
         print(f'Parameters - {self.model.count_parameters()}')
