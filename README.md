@@ -2,7 +2,7 @@
 
 # MNIST PyTorch Project
 
-This project implements a PyTorch-based deep learning model for training on the MNIST dataset. The model is designed to have a maximum of 25,000 parameters and aims to achieve at least 95% training accuracy in the first epoch.
+This project implements a PyTorch-based deep learning model for training on the MNIST dataset. The model is designed to have a maximum of 25,000 parameters and aims to achieve at least 95% test accuracy in the first epoch.
 
 ## Project Structure
 
